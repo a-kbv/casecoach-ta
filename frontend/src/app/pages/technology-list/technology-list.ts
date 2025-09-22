@@ -112,8 +112,8 @@ export class TechnologyList {
     this.applyFilters();
   }
 
-  onTypeScriptFilterChange(selected: FilterOption<boolean>[]) {
-    const selectedValue = selected.length > 0 ? selected[0].value : null;
+  onTypeScriptFilterChange(selected: FilterOption<string>[]) {
+    const selectedValue = selected.length > 0 ? selected[0].value === 'true' : null;
     this.typescriptFilter.set(selectedValue);
     this.applyFilters();
   }

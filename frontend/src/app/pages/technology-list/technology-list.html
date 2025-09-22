@@ -69,7 +69,7 @@
     @if (isLoading()) {
     <app-spinner size="medium" message="Loading technologies..."> </app-spinner>
     } @else { @for (technology of filteredTechnologies(); track technology.id) {
-    <app-list-card [technology]="technology"> </app-list-card>
+    <app-list-card [technology]="technology" (editClick)="onEditTechnology($event)"> </app-list-card>
     } @if (filteredTechnologies().length === 0) {
     <div class="no-results">
       <h5>No technologies found</h5>

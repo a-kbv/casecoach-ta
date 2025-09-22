@@ -5,7 +5,8 @@ import { Technology } from '../../../models/technology';
   selector: 'app-list-card',
   imports: [],
   templateUrl: './list-card.html',
-  styleUrl: './list-card.scss'
+  styleUrl: './list-card.scss',
+  standalone: true
 })
 export class ListCard {
   technology = input.required<Technology>();

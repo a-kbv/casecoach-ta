@@ -1,0 +1,252 @@
+.technology-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--background-color);
+  min-height: 100vh;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--main-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--main-color);
+  }
+}
+
+.form-container {
+  overflow: hidden;
+}
+
+.form-header {
+  padding: 24px 32px;
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.48px;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  color: #721C24;
+  font-size: 14px;
+  font-weight: 500;
+
+  i {
+    font-size: 16px;
+  }
+}
+
+.form {
+  padding: 32px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.field-label {
+  width: 100%;
+  height: 22px;
+  font-style: normal;
+  font-weight: var(--font-weight-label);
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-text);
+  display: flex;
+  align-items: center;
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 20px;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  background: var(--input-background-color);
+  border: none;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: var(--font-weight-input);
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-text);
+  display: flex;
+  align-items: center;
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: var(--text-muted-color);
+  }
+
+  &:focus {
+    background: var(--background-color);
+    border: 1px solid #007E82;
+  }
+
+  &.invalid {
+    background: #FFFFFF;
+    border: 1px solid #DC3545;
+  }
+
+  &:disabled {
+    background-color: var(--background-color);
+    color: #6C757D;
+    cursor: not-allowed;
+  }
+}
+
+.form-textarea {
+  align-items: flex-start;
+  padding: 16px 20px;
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-select {
+  appearance: none;
+  padding-right: 20px;
+
+  &:invalid{color:var(--text-muted-color)}
+  option{color:var(--text-primary-color)}
+}
+
+.field-error {
+  font-size: 12px;
+  font-weight: 500;
+  color: #DC3545;
+  margin-top: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  i {
+    font-size: 14px;
+  }
+}
+
+.btn-primary {
+  background: var(--main-color);
+  border: 1px solid var(--border-color);
+  color: var(--background-color);
+
+  &:hover:not(:disabled) {
+    background: var(--main-hover-color);
+    border-color: var(--border-hover-color);
+  }
+}
+
+.btn-delete {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  color: var(--main-color);
+
+  &:hover:not(:disabled) {
+    background: var(--input-background-color);
+    border-color: var(--border-hover-color);
+    color: var(--main-hover-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .technology-form {
+    padding: 16px;
+  }
+
+  .form-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    padding: 20px 24px;
+  }
+
+  .form-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .form {
+    padding: 24px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .technology-form {
+    padding: 12px;
+  }
+
+  .form-header {
+    padding: 16px 20px;
+  }
+
+  .form {
+    padding: 20px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

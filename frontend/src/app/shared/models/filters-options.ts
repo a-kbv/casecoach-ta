@@ -35,9 +35,9 @@ export const FIRST_RELEASE_OPTIONS: FilterOption<string>[] = [
   { value: 'after-2015', label: 'After 2015', checked: false }
 ];
 
-export const TYPESCRIPT_OPTIONS: FilterOption<boolean>[] = [
-  { value: true, label: 'Yes', checked: false },
-  { value: false, label: 'No', checked: false }
+export const TYPESCRIPT_OPTIONS: FilterOption<string>[] = [
+  { value: 'true', label: 'Yes', checked: true },
+  { value: 'false', label: 'No', checked: false }
 ];
 
 export const SORT_OPTIONS: SortOption[] = [
