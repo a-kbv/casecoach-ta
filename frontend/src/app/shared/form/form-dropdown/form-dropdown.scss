@@ -21,10 +21,6 @@
   background: var(--input-background-color);
   border: none;
   border-radius: 6px;
-  font-size: var(--font-size-input, 16px);
-  font-weight: var(--font-weight-input, 400);
-  line-height: 22px;
-  letter-spacing: -0.24px;
   color: var(--text-primary-color);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -74,10 +70,6 @@
   background: transparent;
   border: none;
   text-align: left;
-  font-size: var(--font-size-input, 16px);
-  font-weight: var(--font-weight-input, 400);
-  line-height: 22px;
-  letter-spacing: -0.24px;
   color: #1B2829;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -91,26 +83,22 @@
 
 @media (max-width: 768px) {
   .dropdown-button {
-    font-size: 14px;
     height: 44px;
     padding: 0 16px;
   }
 
   .option {
-    font-size: 14px;
     padding: 10px 16px;
   }
 }
 
 @media (max-width: 480px) {
   .dropdown-button {
-    font-size: 14px;
     height: 40px;
     padding: 0 12px;
   }
 
   .option {
-    font-size: 14px;
     padding: 8px 12px;
   }
 }

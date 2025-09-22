@@ -36,6 +36,11 @@ export class TechnologyList {
   private technologyApi = inject(TechnologyApi);
 
   @ViewChild('searchFilter') searchFilter!: SearchFilter;
+  @ViewChild('usageFilter') usageFilterRef!: GenericFilter;
+  @ViewChild('difficultyFilter') difficultyFilterRef!: GenericFilter;
+  @ViewChild('popularityFilter') popularityFilterRef!: GenericFilter;
+  @ViewChild('firstReleaseFilter') firstReleaseFilterRef!: GenericFilter;
+  @ViewChild('typescriptFilter') typescriptFilterRef!: GenericFilter;
 
   // Filter options
   readonly USAGE_OPTIONS = USAGE_OPTIONS;
@@ -131,6 +136,13 @@ export class TechnologyList {
     this.firstReleaseFilter.set([]);
     this.typescriptFilter.set(null);
     this.sortBy.set('popularity-desc');
+
+    //reset the internal state of all filter components
+    this.usageFilterRef?.reset();
+    this.difficultyFilterRef?.reset();
+    this.popularityFilterRef?.reset();
+    this.firstReleaseFilterRef?.reset();
+    this.typescriptFilterRef?.reset();
 
     this.applyFilters();
   }

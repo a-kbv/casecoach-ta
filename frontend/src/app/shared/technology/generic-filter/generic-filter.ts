@@ -26,9 +26,18 @@ export class GenericFilter<T = string> {
   selectedCount = computed(() => this.currentFilter().length);
 
   constructor(private elementRef: ElementRef) {
-    // Watch for changes in options input and update internal options
     effect(() => {
       this.internalOptions.set([...this.options()]);
+    });
+
+    effect(() => {
+      const currentFilterValues = this.currentFilter();
+      this.internalOptions.update(options =>
+        options.map(option => ({
+          ...option,
+          checked: currentFilterValues.includes(option.value as string)
+        }))
+      );
     });
   }
 

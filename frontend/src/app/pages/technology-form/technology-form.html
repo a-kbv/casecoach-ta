@@ -1,15 +1,15 @@
 <div class="technology-form">
-  <a href="/" class="back-link">
+  <a href="/" class="back-link nav-link">
     ← RETURN TO MAIN PAGE
   </a>
 
   <div class="form-container">
     <div class="form-header">
-      <h1 class="form-title">{{ title() }}</h1>
+      <h1 class="form-title heading-1">{{ title() }}</h1>
     </div>
 
     @if (error()) {
-      <div class="error-message">
+      <div class="error-message body-small">
         <i class="fas fa-exclamation-circle"></i>
         {{ error() }}
       </div>
@@ -23,7 +23,7 @@
     } @else {
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
       <div class="form-field">
-        <label for="name" class="field-label">Name</label>
+        <label for="name" class="field-label label">Name</label>
         <input
           type="text"
           id="name"
@@ -32,12 +32,12 @@
           [class.invalid]="isFieldInvalid('name')"
           placeholder="Enter technology name">
         @if (isFieldInvalid('name')) {
-          <span class="field-error">{{ getFieldError('name') }}</span>
+          <span class="field-error caption">{{ getFieldError('name') }}</span>
         }
       </div>
 
       <div class="form-field">
-        <label for="usage" class="field-label">Usage</label>
+        <label for="usage" class="field-label label">Usage</label>
         <app-form-dropdown
           [options]="usageOptions"
           placeholder="Select usage type"
@@ -46,12 +46,12 @@
           (valueChange)="form.get('usage')?.setValue($event)">
         </app-form-dropdown>
         @if (isFieldInvalid('usage')) {
-          <span class="field-error">{{ getFieldError('usage') }}</span>
+          <span class="field-error caption">{{ getFieldError('usage') }}</span>
         }
       </div>
 
       <div class="form-field">
-        <label for="difficulty" class="field-label">Difficulty</label>
+        <label for="difficulty" class="field-label label">Difficulty</label>
         <app-form-dropdown
           [options]="difficultyOptions"
           placeholder="Select difficulty level"
@@ -60,12 +60,12 @@
           (valueChange)="form.get('difficulty')?.setValue($event)">
         </app-form-dropdown>
         @if (isFieldInvalid('difficulty')) {
-          <span class="field-error">{{ getFieldError('difficulty') }}</span>
+          <span class="field-error caption">{{ getFieldError('difficulty') }}</span>
         }
       </div>
 
       <div class="form-field">
-        <label for="popularity" class="field-label">Popularity</label>
+        <label for="popularity" class="field-label label">Popularity</label>
         <app-form-dropdown
           [options]="popularityOptions"
           placeholder="Select popularity level"
@@ -74,12 +74,12 @@
           (valueChange)="form.get('popularity')?.setValue($event)">
         </app-form-dropdown>
         @if (isFieldInvalid('popularity')) {
-          <span class="field-error">{{ getFieldError('popularity') }}</span>
+          <span class="field-error caption">{{ getFieldError('popularity') }}</span>
         }
       </div>
 
       <div class="form-field">
-        <label for="firstRelease" class="field-label">First Release</label>
+        <label for="firstRelease" class="field-label label">First Release</label>
         <input
           type="number"
           id="firstRelease"
@@ -90,12 +90,12 @@
           [max]="currentYear"
           placeholder="Enter release year">
         @if (isFieldInvalid('firstRelease')) {
-          <span class="field-error">{{ getFieldError('firstRelease') }}</span>
+          <span class="field-error caption">{{ getFieldError('firstRelease') }}</span>
         }
       </div>
 
       <div class="form-field">
-        <label for="typescript" class="field-label">Typescript</label>
+        <label for="typescript" class="field-label label">Typescript</label>
         <app-form-dropdown
           [options]="typescriptOptions"
           placeholder="Select TypeScript support"
@@ -104,21 +104,21 @@
           (valueChange)="form.get('typescript')?.setValue($event)">
         </app-form-dropdown>
         @if (isFieldInvalid('typescript')) {
-          <span class="field-error">{{ getFieldError('typescript') }}</span>
+          <span class="field-error caption">{{ getFieldError('typescript') }}</span>
         }
       </div>
 
       <div class="form-field">
-        <label for="description" class="field-label">Description</label>
+        <label for="description" class="field-label label">Description</label>
         <textarea
           id="description"
           formControlName="description"
-          class="form-textarea"
+          class="form-textarea body"
           [class.invalid]="isFieldInvalid('description')"
           rows="4"
           placeholder="Enter technology description"></textarea>
         @if (isFieldInvalid('description')) {
-          <span class="field-error">{{ getFieldError('description') }}</span>
+          <span class="field-error caption">{{ getFieldError('description') }}</span>
         }
       </div>
 
@@ -126,7 +126,7 @@
         @if (mode() === 'edit') {
           <button
             type="button"
-            class="btn btn-delete"
+            class="btn btn-delete button-text"
             (click)="onDelete()"
             [disabled]="isSubmitting()">
             Delete
@@ -134,7 +134,7 @@
         }
         <button
           type="submit"
-          class="btn btn-primary"
+          class="btn btn-primary button-text"
           [disabled]="isSubmitting() || form.invalid">
           @if (isSubmitting()) {
             <i class="fas fa-spinner fa-spin"></i>

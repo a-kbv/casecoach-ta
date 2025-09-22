@@ -2,7 +2,7 @@
   <div class="modal-overlay" (click)="onBackdropClick($event)">
     <div class="modal-container">
       <div class="modal-header">
-        <h2 class="modal-title">{{ title() }}</h2>
+        <h2 class="modal-title heading-3">{{ title() }}</h2>
         <button
           type="button"
           class="close-btn"
@@ -13,23 +13,23 @@
       </div>
 
       <div class="modal-body">
-        <p class="modal-message">{{ message() }}</p>
+        <p class="modal-message body">{{ message() }}</p>
         @if (itemName()) {
-          <p class="item-name">"{{ itemName() }}"</p>
+          <p class="item-name body-small text-accent">"{{ itemName() }}"</p>
         }
       </div>
 
       <div class="modal-footer">
         <button
           type="button"
-          class="btn btn-secondary"
+          class="btn btn-secondary button-text"
           (click)="onCancel()"
           [disabled]="isLoading()">
           Cancel
         </button>
         <button
           type="button"
-          class="btn btn-danger"
+          class="btn btn-danger button-text"
           (click)="onConfirm()"
           [disabled]="isLoading()">
           @if (isLoading()) {

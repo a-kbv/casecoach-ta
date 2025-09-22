@@ -1,7 +1,7 @@
 <div class="technology-list">
   <div class="section">
     <div class="title-row">
-      <h1 class="page-title">Web Technologies</h1>
+        <h1 class="heading-1">Web technologies</h1>
       <div class="sort-control">
         <app-sort-filter [selectedValue]="sortBy()" (selectionChange)="onSortChange($event)">
         </app-sort-filter>
@@ -11,6 +11,7 @@
     <div class="filter-controls">
       <div class="filter-buttons">
         <app-generic-filter
+          #usageFilterRef
           placeholder="Usage"
           [currentFilter]="usageFilter()"
           [options]="USAGE_OPTIONS"
@@ -19,6 +20,7 @@
         </app-generic-filter>
 
         <app-generic-filter
+          #difficultyFilterRef
           placeholder="Difficulty"
           [currentFilter]="difficultyFilter()"
           [options]="DIFFICULTY_OPTIONS"
@@ -27,6 +29,7 @@
         </app-generic-filter>
 
         <app-generic-filter
+          #popularityFilterRef
           placeholder="Popularity"
           [currentFilter]="popularityFilter()"
           [options]="POPULARITY_OPTIONS"
@@ -35,6 +38,7 @@
         </app-generic-filter>
 
         <app-generic-filter
+          #firstReleaseFilterRef
           placeholder="First Release"
           [currentFilter]="firstReleaseFilter()"
           [options]="FIRST_RELEASE_OPTIONS"
@@ -43,6 +47,7 @@
         </app-generic-filter>
 
         <app-generic-filter
+          #typescriptFilterRef
           placeholder="TypeScript"
           [currentFilter]="typescriptFilter() !== null ? [typescriptFilter()!.toString()] : []"
           [options]="TYPESCRIPT_OPTIONS"
@@ -51,7 +56,7 @@
         </app-generic-filter>
 
         @if (hasActiveFilters()) {
-        <button type="button" class="clear-all-btn" (click)="clearAllFilters()">Clear all</button>
+        <button type="button" class="clear-all-btn clear-button" (click)="clearAllFilters()">Clear all</button>
         }
       </div>
       <div class="search-section">
@@ -72,14 +77,14 @@
     <app-list-card [technology]="technology" (editClick)="onEditTechnology($event)"> </app-list-card>
     } @if (filteredTechnologies().length === 0) {
     <div class="no-results">
-      <h5>No technologies found</h5>
-      <p>Try adjusting your search or filter criteria</p>
+      <h5 class="heading-5">No technologies found</h5>
+      <p class="body">Try adjusting your search or filter criteria</p>
     </div>
     } }
   </div>
 
   <div class="create-section">
-    <button type="button" class="create-btn" (click)="onCreateTechnology()">
+    <button type="button" class="create-btn button-text" (click)="onCreateTechnology()">
       Create technology
     </button>
   </div>

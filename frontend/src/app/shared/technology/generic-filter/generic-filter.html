@@ -1,12 +1,12 @@
 <div class="generic-filter">
   <button
-    class="filter-button"
+    class="filter-button filter-item"
     [class.active]="hasSelection() && showActiveBorder()"
     (click)="toggleFilter()"
     type="button">
     {{ placeholder() }}
     @if (selectedCount() > 0) {
-      <span class="count">({{ selectedCount() }})</span>
+      <span class="count text-accent">({{ selectedCount() }})</span>
     }
   </button>
 
@@ -20,16 +20,16 @@
               [checked]="option.checked"
               (change)="toggleOption(option)">
             <span class="checkbox-custom"></span>
-            <span class="label">{{ option.label }}</span>
+            <span class="label filter-item">{{ option.label }}</span>
           </label>
         }
       </div>
 
       <div class="actions">
-        <button type="button" class="clear-btn" (click)="clearSelection()">
+        <button type="button" class="clear-btn clear-button" (click)="clearSelection()">
           Clear
         </button>
-        <button type="button" class="apply-btn" (click)="applySelection()">
+        <button type="button" class="apply-btn clear-button" (click)="applySelection()">
           Apply
         </button>
       </div>

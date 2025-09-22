@@ -5,7 +5,10 @@ import { SORT_OPTIONS, SortOption } from '../../models/filters-options';
   selector: 'app-sort-filter',
   imports: [],
   templateUrl: './sort-filter.html',
-  styleUrl: './sort-filter.scss'
+  styleUrl: './sort-filter.scss',
+  host: {
+    '(document:click)': 'onDocumentClick($event)'
+  }
 })
 export class SortFilter {
   placeholder = input<string>('Sort by');
