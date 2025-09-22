@@ -1,0 +1,105 @@
+.technology-card {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--border-hover-color);
+  }
+}
+
+.card-header {
+  margin-bottom: 16px;
+}
+
+.technology-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.card-attributes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.attribute {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+
+}
+
+.attribute-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--text-muted-color);
+}
+
+.attribute-value {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--text-color);
+}
+
+.card-description {
+  margin-bottom: 20px;
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.24px;
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+  gap: 6px;
+  width: 150px;
+  height: 40px;
+  background: var(--main-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.24px;
+  color: var(--background-color);
+
+  &:hover {
+    background: var(--border-hover-color);
+    border-color: var(--border-hover-color);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}

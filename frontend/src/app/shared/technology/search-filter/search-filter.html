@@ -1,1 +1,25 @@
-<p>search-filter works!</p>
+<div class="search-filter">
+  <div class="search-input-container">
+    <input
+      type="text"
+      class="search-input"
+      [placeholder]="placeholder()"
+      [value]="searchValue()"
+      (input)="onInputChange($event)"
+      (keypress)="onKeyPress($event)">
+    @if (searchValue()) {
+      <button
+        type="button"
+        class="clear-btn"
+        (click)="clearSearch()">
+        <i class="fas fa-times"></i>
+      </button>
+    }
+  </div>
+  <button
+    type="button"
+    class="search-btn"
+    (click)="performSearch()">
+    <i class="fas fa-search"></i>
+  </button>
+</div>

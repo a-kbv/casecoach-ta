@@ -1,1 +1,41 @@
-<p>list-card works!</p>
+<div class="technology-card">
+  <div class="card-header">
+    <h3 class="technology-name">{{ technology().name }}</h3>
+  </div>
+
+  <div class="card-attributes">
+    <div class="attribute">
+      <span class="attribute-label">Usage:</span>
+      <span class="attribute-value">{{ getUsageLabel(technology().usage) }}</span>
+    </div>
+    <div class="attribute">
+      <span class="attribute-label">Difficulty:</span>
+      <span class="attribute-value">{{ getDifficultyLabel(technology().difficulty) }}</span>
+    </div>
+    <div class="attribute">
+      <span class="attribute-label">Popularity:</span>
+      <span class="attribute-value">{{ getPopularityLabel(technology().popularity) }}</span>
+    </div>
+    <div class="attribute">
+      <span class="attribute-label">First release:</span>
+      <span class="attribute-value">{{ technology().firstRelease }}</span>
+    </div>
+    <div class="attribute">
+      <span class="attribute-label">Typescript:</span>
+      <span class="attribute-value">{{ getTypeScriptLabel(technology().typescript) }}</span>
+    </div>
+  </div>
+
+  <div class="card-description">
+    <p>{{ technology().description }}</p>
+  </div>
+
+  <div class="card-actions">
+    <button
+      type="button"
+      class="edit-btn"
+      (click)="onEditClick()">
+      Edit technology
+    </button>
+  </div>
+</div>

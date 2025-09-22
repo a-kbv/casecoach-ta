@@ -1,1 +1,86 @@
-<p>technology-list works!</p>
+<div class="technology-list">
+  <div class="section">
+    <div class="title-row">
+      <h1 class="page-title">Web Technologies</h1>
+      <div class="sort-control">
+        <app-sort-filter [selectedValue]="sortBy()" (selectionChange)="onSortChange($event)">
+        </app-sort-filter>
+      </div>
+    </div>
+
+    <div class="filter-controls">
+      <div class="filter-buttons">
+        <app-generic-filter
+          placeholder="Usage"
+          [currentFilter]="usageFilter()"
+          [options]="USAGE_OPTIONS"
+          (selectionChange)="onUsageFilterChange($event)"
+        >
+        </app-generic-filter>
+
+        <app-generic-filter
+          placeholder="Difficulty"
+          [currentFilter]="difficultyFilter()"
+          [options]="DIFFICULTY_OPTIONS"
+          (selectionChange)="onDifficultyFilterChange($event)"
+        >
+        </app-generic-filter>
+
+        <app-generic-filter
+          placeholder="Popularity"
+          [currentFilter]="popularityFilter()"
+          [options]="POPULARITY_OPTIONS"
+          (selectionChange)="onPopularityFilterChange($event)"
+        >
+        </app-generic-filter>
+
+        <app-generic-filter
+          placeholder="First Release"
+          [currentFilter]="firstReleaseFilter()"
+          [options]="FIRST_RELEASE_OPTIONS"
+          (selectionChange)="onFirstReleaseFilterChange($event)"
+        >
+        </app-generic-filter>
+
+        <app-generic-filter
+          placeholder="TypeScript"
+          [currentFilter]="typescriptFilter() !== null ? [typescriptFilter()!.toString()] : []"
+          [options]="TYPESCRIPT_OPTIONS"
+          (selectionChange)="onTypeScriptFilterChange($event)"
+        >
+        </app-generic-filter>
+
+        @if (hasActiveFilters()) {
+        <button type="button" class="clear-all-btn" (click)="clearAllFilters()">Clear all</button>
+        }
+      </div>
+      <div class="search-section">
+        <app-search-filter
+          #searchFilter
+          placeholder="Search"
+          (searchChange)="onSearchChange($event)"
+        >
+        </app-search-filter>
+      </div>
+    </div>
+  </div>
+
+  <div class="technology-cards">
+    @if (isLoading()) {
+    <app-spinner size="medium" message="Loading technologies..."> </app-spinner>
+    } @else { @for (technology of filteredTechnologies(); track technology.id) {
+    <app-list-card [technology]="technology"> </app-list-card>
+    } @if (filteredTechnologies().length === 0) {
+    <div class="no-results">
+      <h5>No technologies found</h5>
+      <p>Try adjusting your search or filter criteria</p>
+    </div>
+    } }
+  </div>
+
+  <div class="create-section">
+    <button type="button" class="create-btn" (click)="onCreateTechnology()">
+      Create technology
+    </button>
+  </div>
+</div>

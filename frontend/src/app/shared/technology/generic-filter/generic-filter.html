@@ -1,0 +1,38 @@
+<div class="generic-filter">
+  <button
+    class="filter-button"
+    [class.active]="hasSelection() && showActiveBorder()"
+    (click)="toggleFilter()"
+    type="button">
+    {{ placeholder() }}
+    @if (selectedCount() > 0) {
+      <span class="count">({{ selectedCount() }})</span>
+    }
+  </button>
+
+  @if (isOpen()) {
+    <div class="filter-menu">
+      <div class="options">
+        @for (option of internalOptions(); track option.value) {
+          <label class="option">
+            <input
+              type="checkbox"
+              [checked]="option.checked"
+              (change)="toggleOption(option)">
+            <span class="checkbox-custom"></span>
+            <span class="label">{{ option.label }}</span>
+          </label>
+        }
+      </div>
+
+      <div class="actions">
+        <button type="button" class="clear-btn" (click)="clearSelection()">
+          Clear
+        </button>
+        <button type="button" class="apply-btn" (click)="applySelection()">
+          Apply
+        </button>
+      </div>
+    </div>
+  }
+</div>

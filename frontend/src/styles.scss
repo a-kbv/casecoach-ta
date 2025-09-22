@@ -1,1 +1,281 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties for Colors and Typography */
+:root {
+  /* Colors */
+  --main-color: #007E82;
+  --main-hover-color: #005F63;
+  --text-primary-color: #1B2829;
+  --text-muted-color: #54595D;
+  --input-background-color: #E9ECEF;
+  --background-color: #FFFFFF;
+  --border-color: #CED5D5;
+  --border-hover-color: #007E82;
+
+  /* Typography Scale */
+  --font-family-primary: 'Inter', 'Segoe UI', sans-serif;
+
+  /* Heading Styles */
+  --h1-size: 46px;
+  --h1-line-height: 54px;
+  --h1-letter-spacing: 0px;
+
+  --h2-size: 42px;
+  --h2-line-height: 50px;
+  --h2-letter-spacing: 0px;
+
+  --h3-size: 38px;
+  --h3-line-height: 46px;
+  --h3-letter-spacing: 0px;
+
+  --h4-size: 32px;
+  --h4-line-height: 40px;
+  --h4-letter-spacing: 0px;
+
+  --h5-size: 24px;
+  --h5-line-height: 30px;
+  --h5-letter-spacing: 0px;
+
+  --h6-size: 22px;
+  --h6-line-height: 28px;
+  --h6-letter-spacing: 0px;
+
+  /* Body Text Styles */
+  --b1-size: 20px;
+  --b1-line-height: 26px;
+  --b1-letter-spacing: -0.24px;
+
+  --b2-size: 18px;
+  --b2-line-height: 24px;
+  --b2-letter-spacing: -0.24px;
+
+  --b3-size: 16px;
+  --b3-line-height: 22px;
+  --b3-letter-spacing: -0.24px;
+
+  --b4-size: 15px;
+  --b4-line-height: 20px;
+  --b4-letter-spacing: -0.24px;
+
+  --b5-size: 14px;
+  --b5-line-height: 18px;
+  --b5-letter-spacing: -0.24px;
+
+  --b6-size: 12px;
+  --b6-line-height: 14px;
+  --b6-letter-spacing: -0.24px;
+}
+
+/* Global Typography Classes */
+h1, .h1 {
+  font-family: var(--font-family-primary);
+  font-size: var(--h1-size);
+  line-height: var(--h1-line-height);
+  letter-spacing: var(--h1-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+h2, .h2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+  letter-spacing: var(--h2-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+h3, .h3 {
+  font-family: var(--font-family-primary);
+  font-size: var(--h3-size);
+  line-height: var(--h3-line-height);
+  letter-spacing: var(--h3-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+h4, .h4 {
+  font-family: var(--font-family-primary);
+  font-size: var(--h4-size);
+  line-height: var(--h4-line-height);
+  letter-spacing: var(--h4-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+h5, .h5 {
+  font-family: var(--font-family-primary);
+  font-size: var(--h5-size);
+  line-height: var(--h5-line-height);
+  letter-spacing: var(--h5-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+h6, .h6 {
+  font-family: var(--font-family-primary);
+  font-size: var(--h6-size);
+  line-height: var(--h6-line-height);
+  letter-spacing: var(--h6-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+/* Body Text Classes */
+.b1 {
+  font-family: var(--font-family-primary);
+  font-size: var(--b1-size);
+  line-height: var(--b1-line-height);
+  letter-spacing: var(--b1-letter-spacing);
+  font-weight: 400;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--b2-size);
+  line-height: var(--b2-line-height);
+  letter-spacing: var(--b2-letter-spacing);
+  font-weight: 400;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b3 {
+  font-family: var(--font-family-primary);
+  font-size: var(--b3-size);
+  line-height: var(--b3-line-height);
+  letter-spacing: var(--b3-letter-spacing);
+  font-weight: 400;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b4 {
+  font-family: var(--font-family-primary);
+  font-size: var(--b4-size);
+  line-height: var(--b4-line-height);
+  letter-spacing: var(--b4-letter-spacing);
+  font-weight: 400;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b5 {
+  font-family: var(--font-family-primary);
+  font-size: var(--b5-size);
+  line-height: var(--b5-line-height);
+  letter-spacing: var(--b5-letter-spacing);
+  font-weight: 400;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b6 {
+  font-family: var(--font-family-primary);
+  font-size: var(--b6-size);
+  line-height: var(--b6-line-height);
+  letter-spacing: var(--b6-letter-spacing);
+  font-weight: 400;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+/* Bold variants for body text */
+.b1-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--b1-size);
+  line-height: var(--b1-line-height);
+  letter-spacing: var(--b1-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b2-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--b2-size);
+  line-height: var(--b2-line-height);
+  letter-spacing: var(--b2-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b3-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--b3-size);
+  line-height: var(--b3-line-height);
+  letter-spacing: var(--b3-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b4-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--b4-size);
+  line-height: var(--b4-line-height);
+  letter-spacing: var(--b4-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b5-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--b5-size);
+  line-height: var(--b5-line-height);
+  letter-spacing: var(--b5-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+.b6-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--b6-size);
+  line-height: var(--b6-line-height);
+  letter-spacing: var(--b6-letter-spacing);
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+/* Utility Classes */
+.text-main-color {
+  color: var(--main-color);
+}
+
+.text-primary-color {
+  color: var(--text-primary-color);
+}
+
+.bg-input {
+  background-color: var(--input-background-color);
+}
+
+/* Global body styles */
+body {
+  font-family: var(--font-family-primary);
+  color: var(--text-primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Default paragraph styling */
+p {
+  font-family: var(--font-family-primary);
+  color: var(--text-primary-color);
+  margin: 0;
+}
