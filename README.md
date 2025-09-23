@@ -65,3 +65,11 @@ Frontend runs on `http://localhost:4200`
 - Technology list with filtering, searching and sorting options
 - Create/edit technology forms
 - Responsive design
+
+## Screenshots
+
+| Technology List | Technology Form |
+|----------------|-----------------|
+| ![Technology List](screenshots/technology-list.png) | ![Technology Form](screenshots/technology-form.png) |
+| **Filter & Search** | **Mobile View** |
+| ![Filter & Search](screenshots/filter-search.png) | ![Mobile View](screenshots/mobile-view.png) |
