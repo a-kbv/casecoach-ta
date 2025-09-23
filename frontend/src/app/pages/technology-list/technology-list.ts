@@ -26,7 +26,6 @@ import {
     CommonModule,
     Spinner,
     ListCard,
-    CommonModule
 ],
   templateUrl: './technology-list.html',
   styleUrl: './technology-list.scss'

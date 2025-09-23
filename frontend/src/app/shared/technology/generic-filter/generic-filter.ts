@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, ElementRef, input, output, signal, effect } from '@angular/core';
+import { Component, computed, ElementRef, input, output, signal, effect, inject } from '@angular/core';
 import { FilterOption } from '../../models/filters-options';
 
 @Component({
@@ -25,7 +25,9 @@ export class GenericFilter<T = string> {
   hasSelection = computed(() => this.currentFilter().length > 0);
   selectedCount = computed(() => this.currentFilter().length);
 
-  constructor(private elementRef: ElementRef) {
+  private elementRef = inject(ElementRef);
+
+  constructor() {
     effect(() => {
       this.internalOptions.set([...this.options()]);
     });

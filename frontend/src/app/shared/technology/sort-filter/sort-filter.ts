@@ -1,4 +1,4 @@
-import { Component, ElementRef, input, output, signal } from '@angular/core';
+import { Component, ElementRef, inject, input, output, signal } from '@angular/core';
 import { SORT_OPTIONS, SortOption } from '../../models/filters-options';
 
 @Component({
@@ -19,7 +19,7 @@ export class SortFilter {
   isOpen = signal(false);
   options = signal<SortOption[]>([...SORT_OPTIONS]);
 
-  constructor(private elementRef: ElementRef) {}
+  private elementRef = inject(ElementRef);
 
   onDocumentClick(event: Event) {
     if (!this.elementRef.nativeElement.contains(event.target)) {

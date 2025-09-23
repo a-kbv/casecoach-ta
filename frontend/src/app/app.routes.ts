@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
-import { TechnologyList } from './pages/technology-list/technology-list';
-import { TechnologyForm } from './pages/technology-form/technology-form';
-import { NotFound } from './pages/not-found/not-found';
 
 export const routes: Routes = [
-  {path: '', component: TechnologyList},
-  {path: 'technology/add', component: TechnologyForm},
-  {path: 'technology/edit/:id', component: TechnologyForm},
-  {path: '**', component: NotFound}
+  //lazy loading
+  {path: '', loadComponent: () => import('./pages/technology-list/technology-list').then(m => m.TechnologyList)},
+  {path: 'technology/add', loadComponent: () => import('./pages/technology-form/technology-form').then(m => m.TechnologyForm)},
+  {path: 'technology/edit/:id', loadComponent: () => import('./pages/technology-form/technology-form').then(m => m.TechnologyForm)},
+  {path: '**', loadComponent: () => import('./pages/not-found/not-found').then(m => m.NotFound)}
 ];

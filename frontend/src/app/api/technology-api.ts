@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CreateTechnologyRequest, Technology, UpdateTechnologyRequest } from '../models/technology';
 
@@ -9,8 +9,7 @@ import { CreateTechnologyRequest, Technology, UpdateTechnologyRequest } from '..
 })
 export class TechnologyApi {
   private apiUrl = 'http://localhost:3000/api/technologies';
-
-  constructor(private http: HttpClient){}
+  private http = inject(HttpClient);
 
   getAllTechnologies(): Observable<Technology[]> {
     return this.http.get<Technology[]>(this.apiUrl);
