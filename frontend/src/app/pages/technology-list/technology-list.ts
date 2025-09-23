@@ -137,6 +137,7 @@ export class TechnologyList {
     this.sortBy.set('popularity-desc');
 
     //reset the internal state of all filter components
+    this.searchFilter?.clearSearch();
     this.usageFilterRef?.reset();
     this.difficultyFilterRef?.reset();
     this.popularityFilterRef?.reset();

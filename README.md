@@ -37,7 +37,7 @@ Backend runs on `http://localhost:3000`
 ```bash
 cd frontend
 npm run build
-ng serve
+npm start
 ```
 
 Frontend runs on `http://localhost:4200`
