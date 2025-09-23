@@ -21,6 +21,10 @@ export class SortFilter {
 
   private elementRef = inject(ElementRef);
 
+  constructor() {
+    // Component initialized
+  }
+
   onDocumentClick(event: Event) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.isOpen.set(false);
@@ -28,7 +32,46 @@ export class SortFilter {
   }
 
   toggleDropdown() {
-    this.isOpen.update(open => !open);
+    const currentState = this.isOpen();
+    const newState = !currentState;
+
+    this.isOpen.set(newState);
+
+    if (newState) {
+      // When opening, ensure proper positioning
+      setTimeout(() => {
+        this.positionDropdown();
+      }, 0);
+    }
+  }
+
+  private positionDropdown() {
+    const button = this.elementRef.nativeElement.querySelector('.sort-button');
+    const menu = this.elementRef.nativeElement.querySelector('.sort-dropdown-menu');
+
+    if (button && menu) {
+      const buttonRect = button.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const menuHeight = menu.offsetHeight;
+
+      // Check if there's enough space below the button
+      const spaceBelow = viewportHeight - buttonRect.bottom;
+      const spaceAbove = buttonRect.top;
+
+      if (spaceBelow < menuHeight && spaceAbove > menuHeight) {
+        // Position above the button
+        menu.style.top = 'auto';
+        menu.style.bottom = '100%';
+        menu.style.marginTop = '0';
+        menu.style.marginBottom = '4px';
+      } else {
+        // Position below the button (default)
+        menu.style.top = '100%';
+        menu.style.bottom = 'auto';
+        menu.style.marginTop = '4px';
+        menu.style.marginBottom = '0';
+      }
+    }
   }
 
   selectOption(option: SortOption) {
